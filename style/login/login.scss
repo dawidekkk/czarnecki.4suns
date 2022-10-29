@@ -1,0 +1,164 @@
+// ******************* Functions *******************
+
+@mixin content_wrapper {
+  border-radius: 10px;
+  border: 0;
+  text-align: center;
+  box-shadow: 0 4px 20px #00000017;
+  background-color: #fff;
+  width: 90%;
+  margin: 1.5rem auto 1.5rem auto;
+  padding: 20px;
+}
+
+@mixin blue_btn {
+  background: #6596dd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  box-shadow: none;
+  color: white;
+  font: 300 15px 'Roboto', sans-serif;
+  cursor: pointer;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+@mixin display_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin input() {
+  width: 92%;
+  display: block;
+  margin: 12px auto;
+  height: 2rem;
+  border-radius: 8px;
+  padding: 5px 20px;
+  outline: none;
+  background-color: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  color: #333;
+  line-height: normal;
+}
+
+// _________________________________________________
+
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-family: 'Roboto', sans-serif;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, .83);
+  top: 0;
+  left: 0;
+  transition: all .25s;
+}
+
+.pattern {
+  background: url(../images/pattern.png);
+  height: 100%;
+  opacity: .05;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+
+.login-wrapper {
+  width: 400px; max-width: 400px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  @include content_wrapper();
+
+  h1 {
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+    color: hsl(216, 64%, 50%);
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color:hsla(0, 0%, 0%, 0.507);
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    @include input();
+  }
+
+  input[type="text"] {
+    margin: 6px auto 0 auto;
+  }
+
+  input[type="password"] {
+    margin: 4px auto 12px auto;
+  }
+
+  input[type="submit"] {
+    @include blue_btn();
+  }
+  .back {
+    background: #f0f0f0;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: none;
+    font: 300 15px 'Roboto', sans-serif;
+    cursor: pointer;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    color: hsla(0, 0%, 0%, 0.507);
+    margin-top: 1rem;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyrights {
+  text-align: center;
+  font-size: 12px;
+  color: hsla(0, 0%, 0%, 0.507);
+}
+
+// @media only screen and (min-width: 600px) {
+//   .login-wrapper {
+//     width: 50%;
+//   }
+// }
+
+.so-red {
+  color: red;
+}
