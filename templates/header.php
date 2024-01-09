@@ -15,7 +15,7 @@
 
 <body>
   <div id="root">
-    <div class="pat"></div>
+    
     <header class="header">
       <?php include("menu.php") ?>
     </header>
